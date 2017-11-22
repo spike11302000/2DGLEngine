@@ -5,9 +5,9 @@ import org.lwjgl.opengl.Display;
 import org.lwjgl.opengl.DisplayMode;
 
 public class Window {
-	private int WIDTH;
-	private int HEIGHT;
-	private String TITLE;
+	public int WIDTH;
+	public int HEIGHT;
+	public String TITLE;
 	public Window(int w, int h, String title) {
 		WIDTH = w;
 		HEIGHT = h;
@@ -52,6 +52,7 @@ public class Window {
 
 	public void setTitle(String title) {
 		TITLE = title;
+		Display.setTitle(TITLE);
 	}
 
 	public void update() {

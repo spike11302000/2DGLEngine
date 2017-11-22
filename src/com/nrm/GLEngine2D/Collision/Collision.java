@@ -7,8 +7,8 @@ public class Collision {
 	public Vector2f size;
 
 	public Collision() {
-		this.position = new Vector2f(0, 0);
-		this.size = new Vector2f(0, 0);
+		this.position = new Vector2f();
+		this.size = new Vector2f();
 	}
 
 	public Collision(Vector2f pos, Vector2f s) {
