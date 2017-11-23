@@ -3,6 +3,8 @@ package com.nrm.GLEngine2D;
 import org.lwjgl.opengl.Display;
 import static org.lwjgl.opengl.GL11.*;
 import java.util.ArrayList;
+
+import com.nrm.GLEngine2D.Audio.AudioManager;
 import com.nrm.GLEngine2D.GameObject.Camera;
 import com.nrm.GLEngine2D.GameObject.GameObject;
 import com.nrm.GLEngine2D.Texture.TextureManager;
@@ -15,6 +17,7 @@ public class Engine extends Thread {
 	private Camera ActiveCam = new Camera();
 	private ArrayList<GameObject> GameObjects = new ArrayList<GameObject>();
 	public TextureManager textureManager = new TextureManager();
+	public AudioManager audioManager = new AudioManager();
 	private int fbo;
 	private int depthbuffer;
 	private int fb_texture;
@@ -26,6 +29,7 @@ public class Engine extends Thread {
 	}
 
 	public void run() {
+		
 		window = new Window(this.w, this.h, this.t);
 
 		glMatrixMode(GL_PROJECTION);
@@ -89,7 +93,7 @@ public class Engine extends Thread {
 
 	public void render() {
 		glLoadIdentity();
-		
+
 		glPushAttrib(GL_VIEWPORT_BIT);
 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
 		glTranslatef(-this.ActiveCam.position.x, -this.ActiveCam.position.y, 0);
