@@ -1,5 +1,7 @@
 package com.nrm.GLEngine2D.GameObject;
 
+import java.util.Random;
+
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.util.vector.Vector2f;
 import org.lwjgl.util.vector.Vector3f;
@@ -43,16 +45,16 @@ public class GameObjectBox extends GameObject {
 		GL11.glEnd();
 		GL11.glPopMatrix();
 	}
-	int tick = 0;
+	int tick = new Random().nextInt(1000000);
 	public void update(){
 		tick++;
 		if(tick%120==0){
 			src.play();
 		}
 		this.src.setPosition(this.position);
-		this.position.x = (float) (Math.sin(tick/100.0f));
-		//this.position.y = (float) (Math.cos(tick/100.0f));
-		//this.rotation.x+=1f;
+		this.position.x = (float) (Math.sin(tick/100.0f))*10;
+		this.position.y = (float) (Math.cos(tick/1.0f))*10;
+		this.rotation.x=tick;
 		this.layer = 20;
 	}
 }

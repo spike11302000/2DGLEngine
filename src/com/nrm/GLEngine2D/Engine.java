@@ -84,11 +84,13 @@ public class Engine extends Thread {
 			GameObj.update();
 		}
 		this.textureManager.registerTexture();
+		this.audioManager.registerAudio();
 		glMatrixMode(GL_PROJECTION);
 		glLoadIdentity();
 		glOrtho(-this.ActiveCam.getZoom(), this.ActiveCam.getZoom(), -this.ActiveCam.getZoom(),
 				this.ActiveCam.getZoom(), -100, 100);
 		glMatrixMode(GL_MODELVIEW);
+		this.ActiveCam.setZoom(10);
 	}
 
 	public void render() {
