@@ -1,4 +1,4 @@
-package com.nrm.GLEngine2D.GameObject;
+package com.nrm.EngineTest;
 
 import java.util.Random;
 
@@ -6,7 +6,7 @@ import org.lwjgl.opengl.GL11;
 import org.lwjgl.util.vector.Vector2f;
 import org.lwjgl.util.vector.Vector3f;
 
-import com.nrm.EngineTest.Main;
+import com.nrm.GLEngine2D.GameObject.GameObject;
 public class GameObjectTri extends GameObject {
 	public GameObjectTri(Vector2f pos, Vector3f rot, int lay) {
 		super(pos,rot,lay);

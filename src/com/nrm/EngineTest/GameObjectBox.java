@@ -1,4 +1,4 @@
-package com.nrm.GLEngine2D.GameObject;
+package com.nrm.EngineTest;
 
 import java.util.Random;
 
@@ -6,8 +6,8 @@ import org.lwjgl.opengl.GL11;
 import org.lwjgl.util.vector.Vector2f;
 import org.lwjgl.util.vector.Vector3f;
 
-import com.nrm.EngineTest.Main;
 import com.nrm.GLEngine2D.Audio.AudioSource;
+import com.nrm.GLEngine2D.GameObject.GameObject;
 
 public class GameObjectBox extends GameObject {
 	private AudioSource src = new AudioSource();
@@ -32,7 +32,7 @@ public class GameObjectBox extends GameObject {
 		GL11.glPushMatrix();
 		GL11.glTranslatef(this.position.x,this.position.y,this.layer);
 		GL11.glRotatef(this.rotation.x, 0, 0, 1);
-		GL11.glBindTexture(GL11.GL_TEXTURE_2D, Main.engine.textureManager.getTextureID("test"));
+		GL11.glBindTexture(GL11.GL_TEXTURE_2D, Main.engine.textureManager.getTextureID("color"));
 		GL11.glBegin(GL11.GL_QUADS);
 		GL11.glTexCoord2f(1f, 0f);
 		GL11.glVertex2f(1f, 1f);
@@ -52,9 +52,9 @@ public class GameObjectBox extends GameObject {
 			src.play();
 		}
 		this.src.setPosition(this.position);
-		this.position.x = (float) (Math.sin(tick/100.0f))*10;
-		this.position.y = (float) (Math.cos(tick/1.0f))*10;
-		this.rotation.x=tick;
+		//this.position.x = (float) (Math.sin(tick/100.0f))*10;
+		//this.position.y = (float) (Math.cos(tick/1.0f))*10;
+		//this.rotation.x=tick;
 		this.layer = 20;
 	}
 }
