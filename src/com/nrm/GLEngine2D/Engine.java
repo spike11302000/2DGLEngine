@@ -90,7 +90,7 @@ public class Engine extends Thread {
 		glOrtho(-this.ActiveCam.getZoom(), this.ActiveCam.getZoom(), -this.ActiveCam.getZoom(),
 				this.ActiveCam.getZoom(), -100, 100);
 		glMatrixMode(GL_MODELVIEW);
-		this.ActiveCam.setZoom(10);
+		
 	}
 
 	public void render() {

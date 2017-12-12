@@ -16,6 +16,7 @@ public class Main {
 		engine.textureManager.addTexture("test.png", "test");
 		engine.textureManager.addTexture("dirt.png", "dirt");
 		ooff = engine.audioManager.loadSound("ooff.wav", "test");
+		camera.setZoom(2);
 		//engine.add(new GameObjectCircle());
 		engine.add(new GameObjectBox());
 		//for (int i = 0; i < 100; i++) {
